@@ -1,0 +1,15 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'Categories', root_path
+        %li
+          = link_to 'Tags', root_path

@@ -7,7 +7,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use mysql as the database for Active Record
@@ -54,6 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # ============================
+# Routing
+# ============================
+gem 'friendly_id', '~> 5.1.0'
+
+# ============================
 # Model
 # ============================
 
@@ -70,6 +74,10 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails'
 gem 'active_decorator'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem "active_material", github: "vigetlabs/active_material"
+gem 'select2-rails'
 
 # Fast Haml
 gem 'faml'
@@ -83,7 +91,7 @@ gem 'kaminari'
 # ============================
 # Authentication
 # ============================
-gem 'sorcery'
+gem 'devise'
 
 # ============================
 # Config
@@ -96,10 +104,13 @@ gem 'dotenv-rails'
 # ============================
 # Seeds
 gem 'seed-fu'
+# Logical delete
+gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
 
 # ============================
 # Utils
 # ============================
+gem 'acts-as-taggable-on', '~> 4.0'
 
 # ============================
 # Environment Group

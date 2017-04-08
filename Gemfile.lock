@@ -1,3 +1,46 @@
+GIT
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 5c0a82b437c3b60a7dd3798b79a258bf3ce2d594
+  specs:
+    activeadmin (1.0.0.pre5)
+      arbre (>= 1.1.1)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.7)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (>= 0.15, < 2.0)
+      railties (>= 4.2, < 5.1)
+      ransack (~> 1.3)
+      sass-rails
+      sprockets (< 4.1)
+
+GIT
+  remote: https://github.com/activeadmin/inherited_resources.git
+  revision: eea3aa21f3867dc182e4db24d1c765bdbcb3df34
+  specs:
+    inherited_resources (1.7.0)
+      actionpack (>= 3.2, < 5.1)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.1)
+      responders
+
+GIT
+  remote: https://github.com/rubysherpas/paranoia.git
+  revision: d70c4c5a7098d4c8416332489e3f63b0a959ab97
+  branch: rails5
+  specs:
+    paranoia (2.2.0.pre)
+      activerecord (>= 4.0, < 5.1)
+
+GIT
+  remote: https://github.com/vigetlabs/active_material.git
+  revision: 853c60a22be2f6a57163a9d762da50c40e2061ec
+  specs:
+    active_material (1.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,12 +82,16 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (4.0.0)
+      activerecord (>= 4.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     anbt-sql-formatter (0.0.5)
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
+    arbre (1.1.1)
+      activesupport (>= 3.0.0)
     arel (7.1.4)
     ast (2.3.0)
     autoprefixer-rails (6.7.7.1)
@@ -63,6 +110,9 @@ GEM
       sass (>= 3.3.4)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
+    bourbon (4.3.4)
+      sass (~> 3.4)
+      thor (~> 0.19)
     brakeman (3.6.1)
     builder (3.2.3)
     bullet (5.5.1)
@@ -91,6 +141,12 @@ GEM
       safe_yaml (~> 1.0.0)
     database_rewinder (0.8.0)
     debug_inspector (0.0.2)
+    devise (4.2.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     dotenv (2.2.0)
     dotenv-rails (2.2.0)
@@ -118,12 +174,15 @@ GEM
       parser
       temple (>= 0.7.0)
       tilt
-    faraday (0.11.0)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+    formtastic (3.1.5)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.6.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     guard (2.14.1)
@@ -165,6 +224,9 @@ GEM
       rubocop (>= 0.47.0)
       sysexits (~> 1.1)
     haml_parser (0.4.1)
+    has_scope (0.7.0)
+      actionpack (>= 4.1, < 5.1)
+      activesupport (>= 4.1, < 5.1)
     hashdiff (0.3.2)
     hirb (0.7.3)
     html2haml (2.1.0)
@@ -182,8 +244,9 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     json (2.0.3)
-    jwt (1.5.6)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -219,8 +282,6 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    multi_xml (0.6.0)
-    multipart-post (2.0.0)
     mysql2 (0.4.5)
     nenv (0.3.0)
     nio4r (2.0.0)
@@ -229,18 +290,14 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oauth (0.5.1)
-    oauth2 (1.3.1)
-      faraday (>= 0.8, < 0.12)
-      jwt (~> 1.0)
-      multi_json (~> 1.3)
-      multi_xml (~> 0.5)
-      rack (>= 1.2, < 3)
+    orm_adapter (0.5.0)
     overcommit (0.39.1)
       childprocess (~> 0.6.3)
       iniparse (~> 1.4)
     parser (2.4.0.0)
       ast (~> 2.2)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -292,6 +349,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.1)
     rake (11.3.0)
+    ransack (1.8.2)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
@@ -339,16 +402,14 @@ GEM
     seed-fu (2.3.6)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
+    select2-rails (4.0.3)
+      thor (~> 0.14)
     sexp_processor (4.8.0)
     shellany (0.0.1)
     simple_form (3.4.0)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
-    sorcery (0.10.3)
-      bcrypt (~> 3.1)
-      oauth (~> 0.4, >= 0.4.4)
-      oauth2 (~> 1.0, >= 0.8.0)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -377,6 +438,8 @@ GEM
     unicode-display_width (1.1.3)
     uniform_notifier (1.10.0)
     vcr (3.0.3)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.5.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -395,6 +458,9 @@ PLATFORMS
 
 DEPENDENCIES
   active_decorator
+  active_material!
+  activeadmin!
+  acts-as-taggable-on (~> 4.0)
   annotate
   awesome_print
   better_errors
@@ -407,18 +473,21 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coffeelint
   database_rewinder
+  devise
   dotenv-rails
   erb2haml
   factory_girl_rails
   faker
   faml
   font-awesome-rails
+  friendly_id (~> 5.1.0)
   guard-livereload
   guard-rspec
   guard-rubocop
   haml-lint
   haml-rails
   hirb
+  inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
@@ -426,6 +495,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
   overcommit
+  paranoia!
   pry-byebug
   pry-rails
   pry-stack_explorer
@@ -439,8 +509,8 @@ DEPENDENCIES
   ruby_css_lint
   sass-rails (~> 5.0)
   seed-fu
+  select2-rails
   simple_form
-  sorcery
   spring
   spring-watcher-listen (~> 2.0.0)
   timecop
