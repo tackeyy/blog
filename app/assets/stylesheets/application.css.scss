@@ -1,0 +1,39 @@
+// First import cerulean variables
+@import "bootswatch/yeti/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// And finally bootswatch style itself
+@import "bootswatch/yeti/bootswatch";
+
+@import "font-awesome";
+
+// Bootstrap body padding for fixed navbar
+body {
+  color: #455A64;
+  padding-top: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", sans-serif;
+}
+
+// https://goo.gl/oeMHBV Fixing Bootstrap style
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  @media screen and (max-width: 543px) {
+    letter-spacing: .05em;
+  }
+}
+
+p {
+  line-height: 1.65em;
+  text-align: justify;
+  letter-spacing: .05em;
+  @media screen and (max-width: 543px) {
+    letter-spacing: .025em;
+  }
+}

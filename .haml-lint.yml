@@ -1,0 +1,6 @@
+linters:
+  SpaceInsideHashAttributes:
+    enabled: false
+
+  LineLength:
+    max: 200
