@@ -1,4 +1,6 @@
 ActiveAdmin.register Post do
+  decorate_with PostDecorator
+
   permit_params :slug, :tags, :status, :title, :body
 
   before_save do |h|
@@ -8,7 +10,7 @@ ActiveAdmin.register Post do
 
   controller do
     def find_resource
-      scoped_collection.friendly.find(params[:id])
+      scoped_collection.friendly.find(params[:id]) || scoped_collection.find(params[:id])
     end
   end
 
@@ -34,14 +36,14 @@ ActiveAdmin.register Post do
   show do
     attributes_table do
       row :status
-      row :tag do
+      row :tags do
         post.category_list
       end
-      row :category do
+      row :categories do
         post.category_list
       end
       row :title
-      row :body
+      row :to_html
       row :created_at
       row :updated_at
     end
@@ -50,14 +52,8 @@ ActiveAdmin.register Post do
 
   form do |f|
     f.inputs "Post Details" do
-      f.input :categories,
-        input_html: {
-          class: 'select2'
-       }
-      f.input :tags,
-        input_html: {
-          class: 'select2'
-        }
+      f.input :categories, input_html: { class: 'select2' }
+      f.input :tags, input_html: { class: 'select2' }
       f.input :slug
       f.input :title
       f.input :body

@@ -73,11 +73,14 @@ gem 'responders'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails'
-gem 'active_decorator'
+
+# Decorator
+gem 'draper', '3.0.0.pre1'
+
+# Active Admin
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-gem "active_material", github: "vigetlabs/active_material"
-gem 'select2-rails'
+gem 'active_material', github: 'vigetlabs/active_material'
 
 # Fast Haml
 gem 'faml'
@@ -87,6 +90,13 @@ gem 'simple_form'
 
 # Pagenation
 gem 'kaminari'
+
+# Support MarkDown and syntax
+gem 'redcarpet'
+gem 'coderay'
+
+# Tagging
+gem 'select2-rails'
 
 # ============================
 # Authentication

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 5c0a82b437c3b60a7dd3798b79a258bf3ce2d594
+  revision: 66a07283887293b82b3a7f0a86c516eaa85db0c0
   specs:
     activeadmin (1.0.0.pre5)
       arbre (>= 1.1.1)
@@ -67,12 +67,16 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_decorator (0.9.0)
     activejob (5.0.2)
       activesupport (= 5.0.2)
       globalid (>= 0.3.6)
     activemodel (5.0.2)
       activesupport (= 5.0.2)
+    activemodel-serializers-xml (1.0.1)
+      activemodel (> 5.x)
+      activerecord (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.0.2)
       activemodel (= 5.0.2)
       activesupport (= 5.0.2)
@@ -152,6 +156,12 @@ GEM
     dotenv-rails (2.2.0)
       dotenv (= 2.2.0)
       railties (>= 3.2, < 5.1)
+    draper (3.0.0.pre1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -246,7 +256,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.0.3)
+    json (2.0.4)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -358,6 +368,8 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redcarpet (3.4.0)
+    request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rspec (3.5.0)
@@ -433,9 +445,9 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.1.13)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.1.3)
+    unicode-display_width (1.2.1)
     uniform_notifier (1.10.0)
     vcr (3.0.3)
     warden (1.2.7)
@@ -457,7 +469,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_decorator
   active_material!
   activeadmin!
   acts-as-taggable-on (~> 4.0)
@@ -470,11 +481,13 @@ DEPENDENCIES
   bullet
   bundler-audit
   byebug
+  coderay
   coffee-rails (~> 4.2)
   coffeelint
   database_rewinder
   devise
   dotenv-rails
+  draper (= 3.0.0.pre1)
   erb2haml
   factory_girl_rails
   faker
@@ -503,6 +516,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails-controller-testing
   rails-flog
+  redcarpet
   responders
   rspec-rails
   rubocop
