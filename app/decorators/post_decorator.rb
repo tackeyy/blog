@@ -7,7 +7,7 @@ class PostDecorator < Draper::Decorator
   }.freeze
 
   REDCARPET_EXTENSIONS = {
-    filter_html:     true,
+    filter_html:        true,
     autolink:           true,
     superscript:        true,
     tables:             true

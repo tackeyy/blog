@@ -7,6 +7,9 @@ class Post < ApplicationRecord
 
   enum status: [:wip, :shipped]
 
+  RECENT_POSTS_CONT = 5
+  LATEST_POSTS_COUNT = 3
+
   validates :status,
             presence: true
   validates :slug,

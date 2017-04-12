@@ -2,7 +2,10 @@
   %h1 tackeyy.com
   .row
     .col-md-8
-      %h2 今日はいい天気
-      %p I am a..
+      - @posts.each do |post|
+        %section
+          %h1 #{post.title}
+          %p #{post.to_html.truncate(100)}
+          = link_to 'Read more', root_path, class: %w(btn btn-success mt-5)
+        .blurb
     .col-md-4
-      %p col-md-4

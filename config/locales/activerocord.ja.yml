@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    models:
+      admin_user: Admin
+      comment: コメント
+      post: 投稿
+    attributes:
+      admin_user:
+        email: email
+      post:
+        slug: slug
+        category: カテゴリー
+        tag: タグ
+        status: ステータス
+        title: タイトル
+        body: 内容
+    errors:
+      models:
+        admin_user:
+          attributes:
+            name:
+              blank: ユーザー名を入力してください。
+              too_long: ユーザー名は8文字以内にしてください。
+            email:
+              blank: emailアドレスを入力してください。
+              not_found_or_invalid_password: emailもしくはパスワードが異なります。
+            password:
+              blank: パスワードを入力してください。
+              too_short: パスワードは8文字以上にしてください。
+            password_confirmation:
+              blank: パスワードを入力してください。
