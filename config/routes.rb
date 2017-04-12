@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'blog/show'
-
-  root 'home#index'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  root 'home#index'
   resources :blog, only: [:show]
 end
