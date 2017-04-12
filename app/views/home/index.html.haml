@@ -6,6 +6,6 @@
         %section
           %h1 #{post.title}
           %p #{post.to_html.truncate(100)}
-          = link_to 'Read more', root_path, class: %w(btn btn-success mt-5)
+          = link_to 'Read more', blog_path(post.friendly_id || post.id), class: %w(btn btn-success mt-5)
         .blurb
     .col-md-4
