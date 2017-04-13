@@ -81,6 +81,8 @@ gem 'coderay'
 # Tagging
 gem 'select2-rails'
 
+gem 'html_truncator', '~>0.2'
+
 # ============================
 # Authentication
 # ============================

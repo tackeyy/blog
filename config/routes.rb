@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'home#index'
-  resources :blog, only: [:show]
+
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
+
+  resources :blog, only: [:show], concerns: :paginatable
 end
