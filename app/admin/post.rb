@@ -1,11 +1,23 @@
 ActiveAdmin.register Post do
   decorate_with PostDecorator
 
-  permit_params :slug, :tags, :status, :title, :body
+  permit_params :slug, :tags, :status, :title, :body, :tags, :tag_list, :tag
+
+  before_create do |h|
+    @post.category_list = params[:post][:category_ids].reject(&:blank?)
+    @post.tag_list = params[:post][:tag_ids].reject(&:blank?)
+  end
 
   before_save do |h|
-    @post.category_list = params[:post][:category_ids]
-    @post.tag_list = params[:post][:tag_ids]
+    category_ids = params[:post][:category_ids].reject(&:blank?)
+    category_names = category_ids.select { |category| category.to_i == 0 }
+    @post.category_list = ActsAsTaggableOn::Tag.where(id: category_ids).map(&:name)
+    @post.category_list.add(category_names.split(',')) if category_names.present?
+
+    tag_ids = params[:post][:tag_ids].reject(&:blank?)
+    tag_names = tag_ids.select { |tag| tag.to_i == 0 }
+    @post.tag_list = ActsAsTaggableOn::Tag.where(id: tag_ids).map(&:name)
+    @post.tag_list.add(tag_names.split(',')) if tag_names.present?
   end
 
   controller do
@@ -35,11 +47,11 @@ ActiveAdmin.register Post do
   show do
     attributes_table do
       row :status
-      row :tags do
-        post.category_list
-      end
       row :categories do
         post.category_list
+      end
+      row :tags do
+        post.tag_list
       end
       row :title
       row :to_html

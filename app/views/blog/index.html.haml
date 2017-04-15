@@ -9,6 +9,5 @@
           = link_to 'Read more', blog_path(post.friendly_id || post.id), class: %w(btn btn-success mt-5)
         .blurb
     .col-md-4
-
   .center
     = paginate @posts, params: {controller: 'blog', action: 'index'}

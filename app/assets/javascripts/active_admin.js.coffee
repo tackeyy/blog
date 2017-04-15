@@ -6,4 +6,5 @@ $ ->
   $('.select2').select2({
     tags: true
     width: '100%'
+    allowClear: true
   })
