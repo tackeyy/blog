@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tags/show'
+
+  get 'categories/show'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -9,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :blog, only: [:show], concerns: :paginatable
+  resources :categories, only: [:index, :show]
+  resources :tags, only: [:show]
 end

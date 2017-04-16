@@ -202,10 +202,9 @@ Session.vim
 # temporary
 .netrwhist
 *~
+
 # auto-generated tag files
 tags
-
-
 
 .env
 .env*
