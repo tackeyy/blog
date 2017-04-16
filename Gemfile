@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 # ============================
 # Routing
 # ============================
@@ -106,6 +107,9 @@ gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
 # Utils
 # ============================
 gem 'acts-as-taggable-on', '~> 4.0'
+
+# Tracking
+gem 'google-analytics-rails'
 
 # ============================
 # Environment Group

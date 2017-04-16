@@ -87,4 +87,6 @@ Rails.application.configure do
   # Sanitizing parameter
   config.filter_parameters += [/(password|private_token|api_endpoint)/i]
 
+  # Google Analytics
+  GA.tracker = 'UA-77183052-2'
 end
