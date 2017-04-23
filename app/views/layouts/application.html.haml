@@ -10,4 +10,6 @@
     = analytics_init if GoogleAnalytics.valid_tracker?
   %body
     = render 'layouts/nav'
+    = render 'layouts/header'
     = yield
+    = render 'layouts/footer'

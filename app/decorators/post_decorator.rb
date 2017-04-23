@@ -10,6 +10,7 @@ class PostDecorator < Draper::Decorator
     filter_html:        true,
     autolink:           true,
     superscript:        true,
+    fenced_code_blocks: true,
     tables:             true
   }.freeze
 

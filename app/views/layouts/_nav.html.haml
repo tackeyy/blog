@@ -1,13 +1,15 @@
-.navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+%nav.navbar.navbar-default.navbar-custom.navbar-fixed-top
+  .container-fluid
+    .navbar-header.page-scroll
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-    #navbar-main.navbar-collapse.collapse
-      %ul.nav.navbar-nav
+      = link_to('tackeyy.com', root_path, class: 'navbar-brand')
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
         %li
-          = link_to 'Home', root_path
+          = link_to('Home', root_path)
         %li
-          = link_to 'Categories', categories_path
+          = link_to('Category', categories_path)

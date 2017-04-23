@@ -1,5 +1,4 @@
 .container
-  %h1 tackeyy.com
   .row
     .col-md-8
       - @posts.each do |post|
@@ -16,7 +15,6 @@
         %ul
         - @categories.each do |category|
           %li= category.render_category_link
-
       %section
         %header
           %h3 tags

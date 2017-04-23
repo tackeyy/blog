@@ -40,8 +40,8 @@ Style/ArrayJoin:
   Enabled: false
 
 # Allow Asian comment
-#Style/AsciiComments:
-#  Enabled: false
+Style/AsciiComments:
+  Enabled: false
 
 Style/AsciiIdentifiers:
   Enabled: false
