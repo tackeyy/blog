@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -76,8 +75,8 @@ gem 'simple_form'
 gem 'kaminari'
 
 # Support MarkDown and syntax
-gem 'redcarpet'
 gem 'coderay'
+gem 'redcarpet'
 
 # Tagging
 gem 'select2-rails'
@@ -115,6 +114,15 @@ gem 'google-analytics-rails'
 # Environment Group
 # ============================
 group :development do
+  gem 'listen', '~> 3.0.5'
+
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'erb2haml'
 
   # help to kill N+1
@@ -144,37 +152,29 @@ group :development do
 
   # A Ruby static code analyzer
   gem 'rubocop', require: false
-end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # Live load browser
+  gem 'guard-livereload', require: false
 
   # Deploy
   gem 'capistrano', '3.5.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
-  gem 'capistrano3-puma'
+  gem 'capistrano-rails'
   gem 'capistrano-rails-console'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 group :development, :test do
   # Pry & extensions
-  gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'better_errors'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'pry-stack_explorer'
-  gem 'awesome_print'
 
   # Show SQL result in Pry console
-  gem 'hirb'
   gem 'awesome_print'
+  gem 'hirb'
 
   # Checks email
   gem 'letter_opener_web'
@@ -194,13 +194,11 @@ group :development, :test do
   # Handle events on file modifications
   gem 'guard-rspec',      require: false
   gem 'guard-rubocop',    require: false
-  gem 'guard-livereload', require: false
 end
 
 group :test do
   # Mock for HTTP requests
   gem 'webmock'
-  gem 'vcr'
 
   # Time Mock
   gem 'timecop'

@@ -487,7 +487,6 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.2.1)
     uniform_notifier (1.10.0)
-    vcr (3.0.3)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.0)
@@ -576,7 +575,6 @@ DEPENDENCIES
   timecop
   tzinfo-data
   uglifier (>= 1.3.0)
-  vcr
   web-console (>= 3.3.0)
   webmock
 

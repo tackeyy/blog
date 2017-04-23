@@ -214,7 +214,7 @@ Style/LeadingCommentSpace:
 Style/LineEndConcatenation:
   Enabled: false
 
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Enabled: false
 
 Style/MethodDefParentheses:
@@ -331,7 +331,7 @@ Style/SpaceAfterColon:
 Style/SpaceAfterComma:
   Enabled: false
 
-Style/SpaceAfterControlKeyword:
+Style/SpaceAroundKeyword:
   Enabled: false
 
 Style/SpaceAfterMethodName:
@@ -365,9 +365,6 @@ Style/SpaceAroundEqualsInParameterDefault:
   Enabled: false
 
 Style/SpaceAroundOperators:
-  Enabled: false
-
-Style/SpaceBeforeModifierKeyword:
   Enabled: false
 
 Style/SpaceInsideBrackets:
