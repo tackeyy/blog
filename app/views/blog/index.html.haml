@@ -3,10 +3,9 @@
     .col-md-8
       - @posts.each do |post|
         %section
-          %h1= post.title
+          %h1.title= post.title
           %p= HTML_Truncator.truncate(post.to_html, 1).html_safe
           = link_to 'Read more', blog_path(post.friendly_id || post.id), class: %w(btn btn-success mt-5)
-        %hr
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center

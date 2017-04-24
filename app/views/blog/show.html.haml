@@ -2,7 +2,8 @@
   .row
     .col-md-8
       %section
-        %h1 #{@post.title}
-        %p #{@post.to_html}
+        %h1.title #{@post.title}
+        .body
+          = @post.to_html
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
