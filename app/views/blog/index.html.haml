@@ -8,20 +8,6 @@
           = link_to 'Read more', blog_path(post.friendly_id || post.id), class: %w(btn btn-success mt-5)
         %hr
     .col-md-4
-      %section
-        %header
-          %h3 categories
-        %hr
-        %ul
-        - @categories.each do |category|
-          %li= category.render_category_link
-
-      %section
-        %header
-          %h3 tags
-        %hr
-        %ul
-        - tag_cloud(@tags, %w(s m l xl)) do |tag, css_class|
-          = link_to tag.name, tag_path(tag.name), class: css_class
+      = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
     = paginate @posts, params: {controller: 'blog', action: 'index'}
