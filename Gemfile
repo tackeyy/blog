@@ -116,12 +116,22 @@ gem 'seed-fu'
 gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
 
 # ============================
+# SEO
+# ============================
+
+# Site map
+gem 'sitemap_generator'
+
+# ============================
 # Utils
 # ============================
 gem 'acts-as-taggable-on', '~> 4.0'
 
 # Tracking
 gem 'google-analytics-rails'
+
+# Manage crontab
+gem 'whenever', require: false
 
 # ============================
 # Environment Group
