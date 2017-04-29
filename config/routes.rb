@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  resources 'feed', only: %i(index)
+
   Redirection.all.each do |redirection|
     get redirection.before.to_s => redirect(redirection.after.to_s)
   end

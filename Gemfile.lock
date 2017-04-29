@@ -168,10 +168,14 @@ GEM
       execjs
       json
     concurrent-ruby (1.0.5)
+    config (1.4.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.1.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_rewinder (0.8.0)
     debug_inspector (0.0.2)
+    deep_merge (1.1.1)
     devise (4.2.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -529,6 +533,7 @@ DEPENDENCIES
   coderay
   coffee-rails (~> 4.2)
   coffeelint
+  config
   database_rewinder
   devise
   dotenv-rails
