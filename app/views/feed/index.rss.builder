@@ -13,8 +13,8 @@ xml.rss("version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/") do
           xml.cdata! HTML_Truncator.truncate(post.to_html, 1).html_safe
         end
         xml.pubDate post.created_at
-        xml.guid blog_path(post.friendly_id || post.id)
-        xml.link blog_path(post.friendly_id || post.id)
+        xml.guid blog_friendly_path(post)
+        xml.link blog_friendly_path(post)
       end
     end
   end

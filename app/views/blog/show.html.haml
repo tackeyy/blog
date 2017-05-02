@@ -1,3 +1,6 @@
+- set_meta_tags title: "#{@post.title}"
+- set_meta_tags description: "#{@post.to_html.truncate(160)}"
+
 .container
   .row
     .col-md-8

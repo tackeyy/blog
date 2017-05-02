@@ -1,2 +1,16 @@
 module ApplicationHelper
+  def default_meta_tags
+    {
+      site: Settings.title,
+      reverse: true,
+      title: Settings.title,
+      description: Settings.sdescription,
+      keywords: Settings.keywords,
+      canonical: request.original_url,
+    }
+  end
+
+  def blog_friendly_path(post)
+    blog_path(post.friendly_id || post.id)
+  end
 end

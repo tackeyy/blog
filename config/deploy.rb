@@ -2,7 +2,7 @@
 lock '3.5.0'
 
 set :application, 'blog'
-set :repo_url, "git@github.com:tackeyy/blog.git"
+set :repo_url, 'git@github.com:tackeyy/blog.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -30,15 +30,16 @@ set :linked_files, %w(.env config/database.yml config/secrets.yml)
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle)
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# set :default_env, { path: '/opt/ruby/bin:$PATH' }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
 set :rbenv_ruby, File.read('.ruby-version').strip
 
-after 'deploy:publishing', 'deploy:restart'
 before 'deploy:migrate', 'deploy:db_create'
+after 'deploy:publishing', 'deploy:restart'
+after 'deploy:restart', 'deploy:sitemap'
 
 namespace :deploy do
   task :restart do
@@ -63,6 +64,15 @@ namespace :deploy do
         within release_path do
           execute :bundle, :exec, :rake, 'db:create'
         end
+      end
+    end
+  end
+
+  desc 'Generate sitemap'
+  task :sitemap do
+    on roles(:app) do
+      within release_path do
+        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
       end
     end
   end

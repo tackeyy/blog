@@ -122,6 +122,9 @@ gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
 # Site map
 gem 'sitemap_generator'
 
+# Manage meta tag
+gem 'meta-tags'
+
 # ============================
 # Utils
 # ============================
