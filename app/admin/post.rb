@@ -62,12 +62,13 @@ ActiveAdmin.register Post do
   end
 
   form do |f|
-    f.inputs "Post Details" do
+    f.inputs 'Post Details' do
       f.input :categories, input_html: { class: 'select2' }
       f.input :tags, input_html: { class: 'select2' }
       f.input :slug
       f.input :title
       f.input :body
+      render 'body_preview'
       f.input :status
     end
     f.actions

@@ -5,6 +5,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag('application', media: 'all')
     = javascript_include_tag('application')
+    = javascript_pack_tag 'hello_vue'
     = analytics_init if GoogleAnalytics.valid_tracker?
   %body
     = render 'layouts/nav'
