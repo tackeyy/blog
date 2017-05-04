@@ -136,6 +136,9 @@ gem 'google-analytics-rails'
 # Manage crontab
 gem 'whenever', require: false
 
+# JavaScript preprocessor
+gem 'webpacker', github: 'rails/webpacker'
+
 # ============================
 # Environment Group
 # ============================

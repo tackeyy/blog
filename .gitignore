@@ -205,6 +205,14 @@ Session.vim
 
 # auto-generated tag files
 tags
+tags.lock
 
 .env
 .env*
+
+### webpacker
+/public/packs
+/node_modules
+
+### sitemap
+/public/sitemap.*

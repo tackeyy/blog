@@ -28,6 +28,15 @@ GIT
       responders
 
 GIT
+  remote: https://github.com/rails/webpacker.git
+  revision: 69c09a51011bca67ff75e544b6a724d441b0018c
+  specs:
+    webpacker (1.2)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
+
+GIT
   remote: https://github.com/rubysherpas/paranoia.git
   revision: d70c4c5a7098d4c8416332489e3f63b0a959ab97
   branch: rails5
@@ -594,6 +603,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
   webmock
+  webpacker!
   whenever
 
 RUBY VERSION
