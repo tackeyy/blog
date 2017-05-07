@@ -208,3 +208,5 @@ tags
 
 .env
 .env*
+
+node_modules/

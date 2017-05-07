@@ -182,6 +182,9 @@ group :development do
   # Live load browser
   gem 'guard-livereload', require: false
 
+  # Manage multi process
+  gem 'foreman'
+
   # Deploy
   gem 'capistrano', '3.5.0'
   gem 'capistrano-bundler'
