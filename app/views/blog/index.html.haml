@@ -8,7 +8,7 @@
         %section
           %h1.title= post.title
           %p= HTML_Truncator.truncate(post.to_html, 1).html_safe
-          = link_to 'Read more', blog_friendly_path, class: %w(btn btn-success mt-5)
+          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
