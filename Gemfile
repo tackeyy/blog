@@ -70,9 +70,9 @@ gem 'font-awesome-rails'
 gem 'draper', '3.0.0.pre1'
 
 # Active Admin
+gem 'active_material', github: 'vigetlabs/active_material'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-gem 'active_material', github: 'vigetlabs/active_material'
 
 # Fast Haml
 gem 'faml'
@@ -112,6 +112,7 @@ gem 'dotenv-rails'
 # ============================
 # Seeds
 gem 'seed-fu'
+
 # Logical delete
 gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
 
