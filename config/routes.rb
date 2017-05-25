@@ -16,5 +16,5 @@ Rails.application.routes.draw do
 
   resources :blog, only: %i(show), concerns: :paginatable
   resources :categories, only: %i(index show)
-  resources :tags, only: %i(show)
+  resources :tags, only: %i(index show)
 end

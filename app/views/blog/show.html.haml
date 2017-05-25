@@ -3,6 +3,8 @@
 
 .container
   .row
+    .col-md-12
+      - breadcrumb :post, @post
     .col-md-8
       %section
         %h1.title #{@post.title}

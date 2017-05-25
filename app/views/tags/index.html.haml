@@ -1,0 +1,23 @@
+- set_meta_tags title: 'タグ一覧'
+- set_meta_tags description: "#{Settings.title} タグ一覧"
+
+.container
+  .row
+    .col-md-12
+      - breadcrumb :tags
+    .col-md-8
+      %section
+        %header
+          %h3 tags
+        %hr
+        %ul
+          - tag_cloud(@tags, %w(s m l xl)) do |tag, css_class|
+            = link_to tag.name, tag_path(tag.name), class: css_class
+    .col-md-4
+      %section
+        %header
+          %h3 categories
+        %hr
+        %ul
+          - @categories.each do |category|
+            %li= category.render_category_link

@@ -3,6 +3,8 @@
 
 .container
   .row
+    .col-md-12
+      - breadcrumb :category, @category_name
     .col-md-8
       - @posts.each do |post|
         %section

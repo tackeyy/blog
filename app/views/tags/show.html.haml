@@ -4,6 +4,8 @@
 .container
   %h1 tackeyy.com
   .row
+    .col-md-12
+      - breadcrumb :tag, @tag_name
     .col-md-8
       - @posts.each do |post|
         %section
