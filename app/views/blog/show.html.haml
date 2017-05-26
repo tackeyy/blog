@@ -10,5 +10,7 @@
         %h1.title #{@post.title}
         .body
           = @post.to_html
+      .comments
+        = render 'disqus', post: @post
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
