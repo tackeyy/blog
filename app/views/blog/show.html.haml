@@ -10,6 +10,8 @@
         %h1.title #{@post.title}
         .body
           = @post.to_html
+      .socials
+        = render 'sns_btns', post: @post
       .comments
         = render 'disqus', post: @post
     .col-md-4
