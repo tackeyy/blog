@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   root 'home#index'
 
   resources 'feed', only: %i(index)
 
   Redirection.all.each do |redirection|
     get redirection.before.to_s => redirect(redirection.after.to_s)
+  end
+
+  resource :admin, only: %i[show] do
+    resources :posts
   end
 
   concern :paginatable do

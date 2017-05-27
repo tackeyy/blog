@@ -66,13 +66,11 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails'
 
+# Admin
+gem 'adminlte2-rails'
+
 # Decorator
 gem 'draper', '3.0.0.pre1'
-
-# Active Admin
-gem 'active_material', github: 'vigetlabs/active_material'
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # Fast Haml
 gem 'faml'
@@ -98,7 +96,6 @@ gem 'gretel'
 # ============================
 # Authentication
 # ============================
-gem 'devise'
 
 # ============================
 # Config
