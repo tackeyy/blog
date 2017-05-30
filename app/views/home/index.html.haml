@@ -1,14 +1,13 @@
 - set_meta_tags title: "#{Settings.title}"
-- set_meta_tags description: 'おもにウェブ開発に関する話をゆるく綴っているブログです。'
+- set_meta_tags description: 'Web周りの話や読んだ本についての感想を書いているブログです。'
 
 .container
   .row
-    - breadcrumb :root
     .col-md-8
       - @posts.each do |post|
         %section
           %h1.title= post.title
-          %p= HTML_Truncator.truncate(post.to_html, 1).html_safe
+          %p= post.description
           = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags

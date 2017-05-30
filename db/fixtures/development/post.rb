@@ -15,6 +15,8 @@ index = 0
     #1. 番号付きリスト
     #1. 番号付きリスト',
     status: 'shipped',
+    slug: "slug-#{index}",
+    description: "これはdescriptionです#{index}",
     category_list: "カテゴリー#{index}",
     tag_list: "タグ#{rand(1..20)}, タグ#{rand(1..20)}, タグ#{rand(1..20)}"
   )

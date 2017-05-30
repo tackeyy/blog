@@ -1,5 +1,5 @@
 - set_meta_tags title: "#{@post.title}"
-- set_meta_tags description: "#{@post.to_html.truncate(160)}"
+- set_meta_tags description: @post.description || "#{@post.to_html.truncate(160)}"
 
 .container
   .row

@@ -1,7 +1,7 @@
 ActiveAdmin.register Post do
   decorate_with PostDecorator
 
-  permit_params :slug, :tags, :status, :title, :body, :tags, :tag_list, :tag
+  permit_params :slug, :tags, :status, :description, :title, :body, :tags, :tag_list, :tag
 
   before_create do
     @post.category_list = params[:post][:category_ids].reject(&:blank?)
@@ -38,6 +38,7 @@ ActiveAdmin.register Post do
     column Post.human_attribute_name(:status),       :status
     column Post.human_attribute_name(:category),     :category_list
     column Post.human_attribute_name(:tag),          :tag_list
+    column Post.human_attribute_name(:description),  :description
     column Post.human_attribute_name(:title),        :title
     column Post.human_attribute_name(:created_at),   :created_at
     column Post.human_attribute_name(:updated_at),   :updated_at
@@ -53,6 +54,7 @@ ActiveAdmin.register Post do
       row :tags do
         post.tag_list
       end
+      row :description
       row :title
       row :to_html
       row :created_at
@@ -66,6 +68,7 @@ ActiveAdmin.register Post do
       f.input :categories, input_html: { class: 'select2' }
       f.input :tags, input_html: { class: 'select2' }
       f.input :slug
+      f.input :description
       f.input :title
       f.input :body
       f.input :status
