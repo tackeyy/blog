@@ -9,7 +9,7 @@
       - @posts.each do |post|
         %section
           %h1= post.title
-          %p= HTML_Truncator.truncate(post.to_html, 1).html_safe
+          %p= post.description
           = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
         %hr
     .col-md-4

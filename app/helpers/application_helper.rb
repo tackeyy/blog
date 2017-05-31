@@ -4,7 +4,7 @@ module ApplicationHelper
       site: Settings.title,
       reverse: true,
       title: Settings.title,
-      description: Settings.sdescription,
+      description: Settings.description,
       keywords: Settings.keywords,
       canonical: request.original_url,
     }
