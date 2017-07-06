@@ -8,7 +8,7 @@
         %section
           %h1.title= post.title
           %p= post.description
-          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
+          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mb-3)
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
