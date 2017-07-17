@@ -8,28 +8,28 @@
 @import "bootstrap-sprockets";
 
 // First import cerulean variables
-@import "bootswatch/yeti/variables";
+// @import "bootswatch/yeti/variables";
 
 // Then bootstrap itself
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/yeti/bootswatch";
+// @import "bootswatch/yeti/bootswatch";
 
 @import "font-awesome";
 
 h1 {
-  font-size: 3rem;
+  font-size: 3rem
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem
 }
 
 h3 {
-  font-size: 1.85rem;
+  font-size: 2rem
 }
 
 h4 {
-  font-size: 1.35rem;
+  font-size: 1.5rem
 }
