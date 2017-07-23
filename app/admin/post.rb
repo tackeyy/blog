@@ -1,7 +1,8 @@
 ActiveAdmin.register Post do
   decorate_with PostDecorator
 
-  permit_params :slug, :tags, :status, :description, :title, :body, :tags, :tag_list, :tag
+  permit_params :slug, :tags, :status, :description, :title, :body, :tags,
+                :tag_list, :tag, :created_at, :updated_at
 
   before_create do
     @post.category_list = params[:post][:category_ids].reject(&:blank?)
@@ -65,13 +66,15 @@ ActiveAdmin.register Post do
 
   form do |f|
     f.inputs "Post Details" do
+      f.input :title
+      f.input :description
+      f.input :slug
       f.input :categories, input_html: { class: 'select2' }
       f.input :tags, input_html: { class: 'select2' }
-      f.input :slug
-      f.input :description
-      f.input :title
       f.input :body
       f.input :status
+      f.input :created_at
+      f.input :updated_at
     end
     f.actions
   end
