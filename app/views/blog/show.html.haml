@@ -6,7 +6,7 @@
     .col-md-12
       - breadcrumb :post, @post
     .col-md-8
-      %section
+      %section.postBox
         %h1.title #{@post.title}
         .body
           = @post.to_html
