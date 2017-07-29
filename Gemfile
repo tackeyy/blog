@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.1.2'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -117,7 +117,7 @@ gem 'dotenv-rails'
 gem 'seed-fu'
 
 # Logical delete
-gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'rails5'
+gem 'paranoia'
 
 # ============================
 # SEO
@@ -132,7 +132,7 @@ gem 'meta-tags'
 # ============================
 # Utils
 # ============================
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', branch: 'master'
 
 # Tracking
 gem 'google-analytics-rails'
