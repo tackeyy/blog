@@ -144,7 +144,7 @@ gem 'whenever', require: false
 # Environment Group
 # ============================
 group :development do
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
