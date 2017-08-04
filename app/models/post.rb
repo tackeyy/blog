@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   acts_as_paranoid
   acts_as_taggable_on :tags, :categories
 
-  enum status: [:wip, :shipped]
-
   LATEST_POSTS_COUNT = 5
+
+  enum status: %i[wip shipped]
 
   validates :status,
             presence: true
@@ -22,8 +22,17 @@ class Post < ApplicationRecord
   validates :body,
             presence: true
 
+  after_create :post_pubsubhubbub
+
   def initialize(attributes = {})
     super
     self.status = :wip if status.blank?
+  end
+
+  private
+
+  def post_pubsubhubbub
+    return if wip?
+    Nagareboshi::Sender.publish("#{Settings.url}#{blog_posts_path(friendly_id)}")
   end
 end
