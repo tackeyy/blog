@@ -310,9 +310,10 @@ GEM
       letter_opener (~> 1.0)
       railties (>= 3.2)
     libv8 (3.16.14.19)
-    listen (3.0.8)
+    listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.12)
@@ -446,6 +447,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
     ruby_css_lint (0.1.0)
+    ruby_dep (1.5.0)
     ruby_parser (3.10.1)
       sexp_processor (~> 4.9)
     safe_yaml (1.0.4)
@@ -573,7 +575,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   letter_opener_web
-  listen (~> 3.0.5)
+  listen (~> 3.1.5)
   meta-tags
   mysql2 (>= 0.3.18, < 0.5)
   overcommit
