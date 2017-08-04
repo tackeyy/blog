@@ -46,7 +46,7 @@ gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 # ============================
 # Routing
 # ============================
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', '~> 5.2.1'
 
 # ============================
 # Model
