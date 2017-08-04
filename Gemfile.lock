@@ -309,7 +309,7 @@ GEM
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
-    libv8 (3.16.14.19)
+    libv8 (3.16.14.19-x86_64-darwin-16)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -329,6 +329,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.1)
     mysql2 (0.4.8)
+    nagareboshi (0.0.2)
     nenv (0.3.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -547,7 +548,6 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-puma
   coderay
-  coffee-rails (~> 4.2)
   coffeelint
   config
   database_rewinder
@@ -578,6 +578,7 @@ DEPENDENCIES
   listen (~> 3.1.5)
   meta-tags
   mysql2 (>= 0.3.18, < 0.5)
+  nagareboshi
   overcommit
   paranoia
   pry-byebug
