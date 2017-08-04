@@ -103,7 +103,7 @@ Style/ConstantName:
 Style/DefWithParentheses:
   Enabled: false
 
-Style/DeprecatedHashMethods:
+Style/PreferredHashMethods:
   Enabled: false
 
 Style/Documentation:
