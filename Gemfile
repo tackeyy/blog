@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby '2.4.1'
 
 git_source(:github) do |repo_name|
@@ -7,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.1.3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -21,12 +22,6 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -34,6 +29,9 @@ gem 'jquery-rails'
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -46,7 +44,7 @@ gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
 # ============================
 # Routing
 # ============================
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', '~> 5.2.1'
 
 # ============================
 # Model
@@ -67,7 +65,7 @@ gem 'bootswatch-rails'
 gem 'font-awesome-rails'
 
 # Decorator
-gem 'draper', '3.0.0.pre1'
+gem 'draper', '3.0.0'
 
 # Active Admin
 gem 'active_material', github: 'vigetlabs/active_material'
@@ -129,6 +127,9 @@ gem 'sitemap_generator'
 # Manage meta tag
 gem 'meta-tags'
 
+# PubSubHubbub
+gem 'nagareboshi'
+
 # ============================
 # Frontend
 # ============================
@@ -149,7 +150,7 @@ gem 'whenever', require: false
 # Environment Group
 # ============================
 group :development do
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -195,7 +196,7 @@ group :development do
   gem 'foreman'
 
   # Deploy
-  gem 'capistrano', '3.5.0'
+  gem 'capistrano', '3.9.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
