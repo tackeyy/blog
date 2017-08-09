@@ -1,12 +1,12 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: Settings.title,
-      reverse: true,
-      title: Settings.title,
+      site:        Settings.title,
+      reverse:     true,
+      title:       Settings.title,
       description: Settings.description,
-      keywords: Settings.keywords,
-      canonical: request.original_url,
+      keywords:    Settings.keywords,
+      canonical:   request.original_url
     }
   end
 

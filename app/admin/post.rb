@@ -6,17 +6,17 @@ ActiveAdmin.register Post do
 
   before_create do
     @post.category_list = params[:post][:category_ids].reject(&:blank?)
-    @post.tag_list = params[:post][:tag_ids].reject(&:blank?)
+    @post.tag_list      = params[:post][:tag_ids].reject(&:blank?)
   end
 
   before_save do
-    category_ids = params[:post][:category_ids].reject(&:blank?)
-    category_names = category_ids.select { |category| category.to_i.zero? }
+    category_ids        = params[:post][:category_ids].reject(&:blank?)
+    category_names      = category_ids.select { |category| category.to_i.zero? }
     @post.category_list = ActsAsTaggableOn::Tag.where(id: category_ids).map(&:name)
     @post.category_list.add(category_names.split(',')) if category_names.present?
 
-    tag_ids = params[:post][:tag_ids].reject(&:blank?)
-    tag_names = tag_ids.select { |tag| tag.to_i.zero? }
+    tag_ids        = params[:post][:tag_ids].reject(&:blank?)
+    tag_names      = tag_ids.select { |tag| tag.to_i.zero? }
     @post.tag_list = ActsAsTaggableOn::Tag.where(id: tag_ids).map(&:name)
     @post.tag_list.add(tag_names.split(',')) if tag_names.present?
   end
