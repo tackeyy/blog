@@ -131,6 +131,11 @@ gem 'meta-tags'
 gem 'nagareboshi'
 
 # ============================
+# Frontend
+# ============================
+gem 'webpacker', '~> 2.0'
+
+# ============================
 # Utils
 # ============================
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', branch: 'master'
