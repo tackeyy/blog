@@ -1,2 +1,2 @@
-web: bundle exec rails s
-hot: bundle exec guard
+web:       bundle exec rails s
+webpacker: ./bin/webpack-dev-server
