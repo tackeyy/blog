@@ -6,8 +6,9 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag_name = params[:id]
-    @posts    = Post.tagged_with(params[:id], on: :tags).page(params[:page]).decorate
+    @tag_name     = params[:id]
+    @posts        = Post.tagged_with(params[:id], on: :tags).page(params[:page]).decorate
+    @latest_posts = Post.shipped.order(created_at: :desc).page(params[:page]).decorate
   end
 
   private
