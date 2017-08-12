@@ -109,6 +109,8 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootsnap (1.1.2)
+      msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -325,6 +327,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
+    msgpack (1.1.0)
     multi_json (1.12.1)
     mysql2 (0.4.8)
     nagareboshi (0.0.2)
@@ -534,6 +537,7 @@ DEPENDENCIES
   annotate
   awesome_print
   better_errors
+  bootsnap
   bootstrap-sass
   bootswatch-rails
   brakeman
