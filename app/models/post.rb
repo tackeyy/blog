@@ -29,6 +29,27 @@ class Post < ApplicationRecord
     self.status = :wip if status.blank?
   end
 
+  def self.archive_list(posts:)
+    (2016..Date.current.year).map do |year|
+      this_year            = Date.new(year)
+      months               = archives_of_each_months(posts: posts, this_year: this_year)
+      this_year_post_count = posts.count { |post| post.created_at.between?(this_year, this_year.next_year) }
+      { name: "#{year}年", months: months, total: this_year_post_count }
+    end.to_a
+  end
+
+  def self.archives_of_each_months(posts:, this_year:)
+    this_year_posts = posts.select { |post| post.created_at.between?(this_year, this_year.next_year) }
+    (1..12).map do |month|
+      this_month            = Date.new(this_year.year, month)
+      this_month_post_count = this_year_posts.count do |post|
+        posted_month = post.created_at.to_s(:month).gsub(/^0/, '').to_i
+        posted_month.between?(this_month.month, this_month.next_month.month)
+      end
+      { name: "#{month}月", total: this_month_post_count }
+    end.to_a
+  end
+
   private
 
   def post_pubsubhubbub

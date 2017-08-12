@@ -26,4 +26,4 @@
       = link_to blog_path(post) do
         %li= post.title
           %p= post.description
-%ArchiveList
+%ArchiveList{ id: 'archive-list', data: { archives: @archives.to_json } }
