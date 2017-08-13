@@ -6,11 +6,13 @@
     <hr>
     <ul v-for="year in this.years" class="archive-list-ul">
       <li @click="toggle">
-        <a :href="year.path">{{ year.name }}({{ year.total }})</a>
+        <span v-if="year.total == 0">{{ year.name }}({{ year.total }})</span>
+        <a v-else :href="year.path">{{ year.name }}({{ year.total }})</a>
       </li>
       <ul v-for="month in year.months">
         <li @click="toggle">
-          <a>{{ month.name }}({{ month.total }})</a>
+          <span v-if="month.total == 0">{{ month.name }}({{ month.total }})</span>
+          <a v-else :href="month.path">{{ month.name }}({{ month.total }})</a>
         </li>
       </ul>
     </ul>
