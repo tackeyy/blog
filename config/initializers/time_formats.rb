@@ -1,0 +1,11 @@
+Date::DATE_FORMATS[:default] = '%Y/%m/%d'
+
+Time::DATE_FORMATS[:default]   = '%Y/%m/%d %H:%M'
+Time::DATE_FORMATS[:date]      = '%Y/%m/%d'
+Time::DATE_FORMATS[:date_i18n] = '%Y年%m月%d日'
+Time::DATE_FORMATS[:hour]      = '%H'
+Time::DATE_FORMATS[:hour_i18n] = '%H時'
+Time::DATE_FORMATS[:time]      = '%H:%M:%S'
+Time::DATE_FORMATS[:datetime]  = '%Y/%m/%d %H:%M'
+Time::DATE_FORMATS[:year]      = '%Y'
+Time::DATE_FORMATS[:month]     = '%m'
