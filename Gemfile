@@ -183,6 +183,11 @@ group :development do
   gem 'coffeelint', require: false
 
   # Syntax checker for HAML
+  # TODO: 以下のエラーが修正されたらコメントアウトを外す
+  #       refs: https://circleci.com/gh/tackeyy/blog/76
+  #       refs: https://github.com/brigade/haml-lint/issues/214
+  #       parser/current is loading parser/ruby24, which recognizes
+  #       warning: 2.4.0-compliant syntax, but you are running 2.4.1.
   gem 'haml-lint', require: false
 
   # Syntax checker for CSS
