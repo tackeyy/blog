@@ -188,7 +188,7 @@ group :development do
   #       refs: https://github.com/brigade/haml-lint/issues/214
   #       parser/current is loading parser/ruby24, which recognizes
   #       warning: 2.4.0-compliant syntax, but you are running 2.4.1.
-  gem 'haml-lint', require: false
+  # gem 'haml-lint', require: false
 
   # Syntax checker for CSS
   gem 'ruby_css_lint', require: false
