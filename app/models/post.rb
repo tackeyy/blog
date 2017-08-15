@@ -46,8 +46,9 @@ class Post < ApplicationRecord
         posted_month = post.created_at.to_s(:month).gsub(/^0/, '').to_i
         posted_month.between?(this_month.month, this_month.next_month.month)
       end
+      next nil if this_month_post_count.zero?
       { name: "#{month}月", total: this_month_post_count }
-    end.to_a
+    end.compact.to_a
   end
 
   private

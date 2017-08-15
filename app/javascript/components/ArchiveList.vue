@@ -11,8 +11,7 @@
       </li>
       <ul v-for="month in year.months">
         <li @click="toggle">
-          <span v-if="month.total == 0">{{ month.name }}({{ month.total }})</span>
-          <a v-else :href="month.path">{{ month.name }}({{ month.total }})</a>
+          <a :href="month.path">{{ month.name }}({{ month.total }})</a>
         </li>
       </ul>
     </ul>
