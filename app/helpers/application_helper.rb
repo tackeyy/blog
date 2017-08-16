@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def blog_friendly_path(post)
-    blog_path(post.friendly_id || post.id)
+    blog_posts_path(post.friendly_id || post.id)
   end
 end
