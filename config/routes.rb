@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :posts, only: %i[index show], concerns: :paginatable
     resources :categories, only: %i[index show]
     resources :tags, only: %i[index show]
+    namespace :archives do
+      get '/:year',        to: 'years#index'
+      get '/:year/:month', to: 'months#index'
+    end
   end
 
   Redirection.all.each do |redirection|
