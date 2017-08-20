@@ -1,0 +1,20 @@
+- set_meta_tags title: "Tag: #{@tag_name}"
+- set_meta_tags description: "Tag: #{@tag_name}に関してやってみたこと、知識共有、雑談についての記事の一覧です。"
+
+
+.container
+  %h1 tackeyy.com
+  .row
+    .col-md-12
+      - breadcrumb :tag, @tag_name
+    .col-md-8
+      - @posts.each do |post|
+        %section
+          %h1= post.title
+          %p= post.description
+          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
+        %hr
+    .col-md-4
+      = render 'shared/side_nav', categories: @categories, tags: @tags
+  .center
+    = paginate @posts
