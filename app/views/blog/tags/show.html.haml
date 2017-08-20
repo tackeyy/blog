@@ -12,9 +12,9 @@
         %section
           %h1= post.title
           %p= post.description
-          = link_to 'Read more', blog_path(post.friendly_id || post.id), class: %w(btn btn-success mt-5)
+          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
         %hr
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
-    = paginate @posts, params: {controller: 'blog', action: 'index'}
+    = paginate @posts

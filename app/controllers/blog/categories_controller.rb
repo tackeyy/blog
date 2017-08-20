@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Blog::CategoriesController < ApplicationController
   before_action :set_categories
 
   def index

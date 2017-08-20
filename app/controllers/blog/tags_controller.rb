@@ -1,4 +1,4 @@
-class TagsController < ApplicationController
+class Blog::TagsController < ApplicationController
   before_action :set_tags
   before_action :set_categories
 

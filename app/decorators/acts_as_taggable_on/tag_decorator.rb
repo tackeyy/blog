@@ -3,6 +3,6 @@ class ActsAsTaggableOn::TagDecorator < Draper::Decorator
   delegate_all
 
   def render_category_link
-    link_to("#{model.name} (#{model.taggings_count})", h.category_path(model.name))
+    link_to("#{model.name} (#{model.taggings_count})", h.blog_category_path(model.name))
   end
 end
