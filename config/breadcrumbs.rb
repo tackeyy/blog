@@ -8,7 +8,7 @@ crumb :post do |post|
 end
 
 crumb :categories do
-  link 'Categories', categories_path
+  link 'Categories', blog_categories_path
   parent :root
 end
 
@@ -18,7 +18,7 @@ crumb :category do |category_name|
 end
 
 crumb :tags do
-  link 'Tags', tags_path
+  link 'Tags', blog_tags_path
   parent :root
 end
 

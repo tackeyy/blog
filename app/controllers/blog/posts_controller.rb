@@ -1,5 +1,5 @@
-class BlogController < ApplicationController
-  before_action :set_posts, only: [:index, :show]
+class Blog::PostsController < ApplicationController
+  before_action :set_posts, only: %i[index show]
   before_action :set_post, only: [:show]
 
   def index

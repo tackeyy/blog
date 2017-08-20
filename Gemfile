@@ -14,7 +14,7 @@ gem 'rails', '~> 5.1.3'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.10'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -151,6 +151,16 @@ gem 'whenever', require: false
 # ============================
 # Environment Group
 # ============================
+group :deployment do
+  # Deploy
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
+end
+
 group :development do
   gem 'listen', '~> 3.1.5'
 
@@ -182,13 +192,7 @@ group :development do
   # Style checker that helps keep CoffeeScript code clean and consistent
   gem 'coffeelint', require: false
 
-  # Syntax checker for HAML
-  # TODO: 以下のエラーが修正されたらコメントアウトを外す
-  #       refs: https://circleci.com/gh/tackeyy/blog/76
-  #       refs: https://github.com/brigade/haml-lint/issues/214
-  #       parser/current is loading parser/ruby24, which recognizes
-  #       warning: 2.4.0-compliant syntax, but you are running 2.4.1.
-  # gem 'haml-lint', require: false
+  gem 'haml-lint', require: false
 
   # Syntax checker for CSS
   gem 'ruby_css_lint', require: false
@@ -201,14 +205,6 @@ group :development do
 
   # Manage multi process
   gem 'foreman'
-
-  # Deploy
-  gem 'capistrano', '3.9.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-puma'
 end
 
 group :development, :test do

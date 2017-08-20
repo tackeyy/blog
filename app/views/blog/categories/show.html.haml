@@ -15,4 +15,4 @@
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
-    = paginate @posts, params: {controller: 'blog', action: 'index'}
+    = paginate @posts
