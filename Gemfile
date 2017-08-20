@@ -151,6 +151,16 @@ gem 'whenever', require: false
 # ============================
 # Environment Group
 # ============================
+group :deployment do
+  # Deploy
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
+end
+
 group :development do
   gem 'listen', '~> 3.1.5'
 
@@ -195,14 +205,6 @@ group :development do
 
   # Manage multi process
   gem 'foreman'
-
-  # Deploy
-  gem 'capistrano', '3.9.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-puma'
 end
 
 group :development, :test do
