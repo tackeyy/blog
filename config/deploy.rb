@@ -44,16 +44,9 @@ set :conditionally_migrate, true
 set :rbenv_ruby, File.read('.ruby-version').strip
 
 before 'deploy:migrate', 'deploy:db_create'
-after 'deploy:publishing', 'deploy:restart'
 after 'deploy:restart', 'deploy:sitemap'
 
 namespace :deploy do
-  task :restart do
-    on roles(:app), in: :sequence, wait: 15 do
-      invoke 'puma:restart'
-    end
-  end
-
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
