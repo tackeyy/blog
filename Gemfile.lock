@@ -547,7 +547,7 @@ DEPENDENCIES
   brakeman
   bullet
   bundler-audit
-  capistrano (= 3.9.0)
+  capistrano
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
