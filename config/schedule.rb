@@ -1,5 +1,5 @@
 set :output, 'log/crontab.log'
 
-every 1.week , roles: %i(app) do
+every 1.day, at: '5:00 am' do
   rake '-s sitemap:refresh'
 end
