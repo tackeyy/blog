@@ -1,18 +1,35 @@
 - if params[:page].present?
-  - set_meta_tags title: "Blog #{params[:page]}ページ目"
-  - set_meta_tags description: "#{params[:page]}ページ目 | Web周りの話や読んだ本についての感想を書いているブログです。"
+  - if params[:month].present?
+    - set_meta_tags title: "Blog #{params[:page]}ページ目 #{params[:year]}年#{params[:month]}月の記事の一覧"
+    - set_meta_tags description: "#{params[:page]}ページ目 #{params[:year]}年#{params[:month]}月の記事の一覧 | Web周りの話や読んだ本についての感想を書いているブログです。"
+  - else
+    - set_meta_tags title: "Blog #{params[:page]}ページ目 #{params[:year]}年の記事の一覧"
+    - set_meta_tags description: "#{params[:page]}ページ目 #{params[:year]}年の記事の一覧 | Web周りの話や読んだ本についての感想を書いているブログです。"
 - else
-  - set_meta_tags title: 'Blog'
-  - set_meta_tags description: 'Web周りの話や読んだ本についての感想を書いているブログです。'
+  - if params[:month].present?
+    - set_meta_tags title: "Blog #{params[:year]}年#{params[:month]}月の記事の一覧"
+    - set_meta_tags description: "#{params[:year]}年#{params[:month]}月の記事の一覧 | Web周りの話や読んだ本についての感想を書いているブログです。"
+  - else
+    - set_meta_tags title: "Blog #{params[:year]}年の記事の一覧"
+    - set_meta_tags description: "#{params[:year]}年の記事の一覧 | Web周りの話や読んだ本についての感想を書いているブログです。"
 
 .container
   .row
     .col-md-8
-      - @posts.each do |post|
-        %section.postBox
-          %h1.title= post.title
-          %p= post.description
-          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mb-3)
+      %h1
+        - if params[:month].present?
+          = "#{params[:year]}年#{params[:month]}月の記事一覧"
+        - else
+          = "#{params[:year]}年の記事一覧"
+      - if @posts.present?
+        - @posts.each do |post|
+          %section.postBox
+            %h1.title= post.title
+            %p= post.description
+            = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mb-3)
+      - else
+        %hr
+        記事はありません
     .col-md-4
       = render 'shared/side_nav', categories: @categories, tags: @tags
   .center
