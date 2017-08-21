@@ -36,7 +36,7 @@ set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle)
 # set :default_env, { path: '/opt/ruby/bin:$PATH' }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 3
 
 # Skip migration if files in db/migrate were not modified
 set :conditionally_migrate, true
@@ -44,7 +44,7 @@ set :conditionally_migrate, true
 set :rbenv_ruby, File.read('.ruby-version').strip
 
 before 'deploy:migrate', 'deploy:db_create'
-after 'deploy:restart', 'deploy:sitemap'
+after  'deploy:finished', 'deploy:sitemap'
 
 namespace :deploy do
   after :restart, :clear_cache do
