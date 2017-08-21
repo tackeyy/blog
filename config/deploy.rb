@@ -44,7 +44,7 @@ set :conditionally_migrate, true
 set :rbenv_ruby, File.read('.ruby-version').strip
 
 before 'deploy:migrate', 'deploy:db_create'
-after 'deploy:restart', 'deploy:sitemap'
+after  'deploy:finished', 'deploy:sitemap'
 
 namespace :deploy do
   after :restart, :clear_cache do
