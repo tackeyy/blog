@@ -29,6 +29,10 @@ class Post < ApplicationRecord
     self.status = :wip if status.blank?
   end
 
+  def self.all_archive_list
+    self.archive_list(posts: all)
+  end
+
   def self.archive_list(posts:)
     (2016..Date.current.year).map do |year|
       this_year            = Date.new(year)

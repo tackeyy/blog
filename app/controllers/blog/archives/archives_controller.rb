@@ -2,7 +2,7 @@ class Blog::Archives::ArchivesController < ApplicationController
   private
 
   def set_archives
-    @archives = Post.archive_list(posts: @posts)
+    @archives = Post.all_archive_list
   end
 
   def set_categories
