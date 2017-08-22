@@ -38,7 +38,7 @@ class Post < ApplicationRecord
       this_year            = Date.new(year)
       months               = archives_of_each_months(posts: posts, this_year: this_year)
       this_year_post_count = posts.count { |post| post.created_at.between?(this_year, this_year.next_year) }
-      { name: "#{year}年", months: months, total: this_year_post_count }
+      { name: "#{year}年", months: months, path: "/blog/archives/#{year}", total: this_year_post_count }
     end.to_a
   end
 
@@ -51,7 +51,7 @@ class Post < ApplicationRecord
         posted_month.between?(this_month.month, this_month.next_month.month)
       end
       next nil if this_month_post_count.zero?
-      { name: "#{month}月", total: this_month_post_count }
+      { name: "#{month}月", path: "/blog/archives/#{this_year.year}/#{month}", total: this_month_post_count }
     end.compact.to_a
   end
 
