@@ -38,8 +38,14 @@ class Post < ApplicationRecord
       this_year            = Date.new(year)
       months               = archives_of_each_months(posts: posts, this_year: this_year)
       this_year_post_count = posts.count { |post| post.created_at.between?(this_year, this_year.next_year) }
-      { name: "#{year}年", months: months, path: "/blog/archives/#{year}", total: this_year_post_count }
-    end.to_a
+      {
+        name:   "#{year}年",
+        open:   false,
+        months: months,
+        path:   "/blog/archives/#{year}",
+        total:  this_year_post_count
+      }
+    end.to_a.reverse
   end
 
   def self.archives_of_each_months(posts:, this_year:)
