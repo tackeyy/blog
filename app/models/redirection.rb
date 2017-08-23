@@ -9,6 +9,7 @@ class Redirection < ActiveHash::Base
     { id: 7, before: '/categories/:id',   after: '/blog/categories/%{id}' },
     { id: 8, before: '/tags',             after: '/blog/tags' },
     { id: 9, before: '/tags/:id',         after: '/blog/tags/%{id}' },
-    { id: 10, before: '/blog/:id',        after: '/blog/posts/%{id}' }
+    { id: 10, before: '/blog/:id',        after: '/blog/posts/%{id}' },
+    { id: 11, before: '/blog/page/:page', after: 'blog/posts/page/%{page}' }
   ]
 end
