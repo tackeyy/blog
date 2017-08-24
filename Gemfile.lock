@@ -319,7 +319,7 @@ GEM
     lumberjack (1.0.12)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
-    meta-tags (2.4.1)
+    meta-tags (2.5.0)
       actionpack (>= 3.2.0, < 5.2)
     method_source (0.8.2)
     mime-types (3.1)
