@@ -135,7 +135,7 @@ gem 'nagareboshi'
 # ============================
 # Frontend
 # ============================
-gem 'webpacker', '~> 2.0'
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 
 # ============================
 # Utils

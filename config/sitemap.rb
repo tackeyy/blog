@@ -18,4 +18,12 @@ SitemapGenerator::Sitemap.create do
   Post.tag_counts_on(:tags).each do |tag|
     add blog_tag_path(tag.name)
   end
+
+  (2016..Date.current.year).each do |year|
+    add blog_archives_path(year: year)
+
+    (1..12).each do |month|
+      add "#{blog_archives_path(year: year)}/#{month}"
+    end
+  end
 end

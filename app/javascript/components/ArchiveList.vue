@@ -5,14 +5,13 @@
     </header>
     <hr>
     <ul v-for="year in this.years" class="archive-list-ul">
-      <li @click="toggle">
+      <li @click="toggle(year)" :model="year" :class="[year.open ? 'archive-open' : 'archive-close']">
         <span v-if="year.total == 0">{{ year.name }}({{ year.total }})</span>
         <a v-else :href="year.path">{{ year.name }}({{ year.total }})</a>
       </li>
-      <ul v-for="month in year.months">
-        <li @click="toggle">
-          <span v-if="month.total == 0">{{ month.name }}({{ month.total }})</span>
-          <a v-else :href="month.path">{{ month.name }}({{ month.total }})</a>
+      <ul v-if="year.open" v-for="month in year.months" class="archive-list-ul">
+        <li class="archive-list-li">
+          <a :href="month.path">{{ month.name }}({{ month.total }})</a>
         </li>
       </ul>
     </ul>
@@ -28,27 +27,36 @@ export default {
     }
   },
   methods: {
-    toggle () {
-      if (this.isFolder) {
-        this.open = !this.open
-      }
+    toggle (year) {
+      this.years.forEach(function(_year, i){
+        if (_year.name === year.name) {
+          _year.open = !_year.open
+        }
+      })
     },
     getArchives () {
       const node = document.getElementById('archive-list')
       return JSON.parse(node.getAttribute('data-archives'))
     }
   },
-  computed: {
-    isFolder: function () {
-      return this.archives &&
-        this.archives.length
-    }
-  },
 }
 </script>
 
-<style lans="scss" scoped>
-.archive-list-ul {
-  line-height: 1.5em;
-}
+<style lang="sass" scoped>
+.archive-list-ul
+  list-style-type: none
+  line-height: 1.5em
+
+.archive-close::before
+  margin-right: 2%
+  font-family: 'FontAwesome'
+  content: '\f0da' // fa-caret-right
+
+.archive-open::before
+  margin-right: 2%
+  font-family: 'FontAwesome'
+  content: '\f0d7' // fa-caret-down
+
+.archive-list-li
+  list-style-type: circle
 </style>
