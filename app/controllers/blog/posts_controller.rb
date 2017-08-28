@@ -3,7 +3,6 @@ class Blog::PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @archives   = Post.all_archive_list
     @categories = Post.tag_counts_on(:categories).decorate
     @tags       = Post.tag_counts_on(:tags).decorate
   end
