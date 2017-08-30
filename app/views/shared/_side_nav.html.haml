@@ -18,6 +18,8 @@
       = link_to blog_posts_path(post) do
         %li= post.title
           %p= post.description
+%ArchiveList{ id: 'archive-list', data: { archives: @archives.to_json } }
+%hr
 %section
   %header
     %h3
@@ -26,4 +28,3 @@
   %ul
     - tag_cloud(@tags, %w(s m l xl)) do |tag, css_class|
       = link_to tag.name, blog_tag_path(tag.name), class: css_class
-%ArchiveList{ id: 'archive-list', data: { archives: @archives.to_json } }
