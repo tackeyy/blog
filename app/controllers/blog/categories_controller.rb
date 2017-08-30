@@ -7,7 +7,7 @@ class Blog::CategoriesController < ApplicationController
 
   def show
     @category_name = params[:id]
-    @posts         = Post.tagged_with(params[:id], on: :categories).page(params[:page]).decorate
+    @posts         = Post.tagged_with(params[:id], on: :categories).includes(:taggings).page(params[:page]).decorate
     @latest_posts  = Post.shipped.order(created_at: :desc).page(params[:page]).decorate
     @tags          = Post.tag_counts_on(:tags).decorate
   end

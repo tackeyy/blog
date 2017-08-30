@@ -9,9 +9,15 @@
       - breadcrumb :tag, @tag_name
     .col-md-8
       - @posts.each do |post|
-        %section
-          %h1= post.title
-          %p= post.description
+        %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
+          %h1{ itemscope: 'headline' }
+            = post.title
+          %span{ itemscope: 'datepublished' }
+            = post.created_at.to_s(:date)
+          %span{ itemscope: 'keywords' }
+            = post.link_to_tag_lists
+          %p.description{ itemscope: 'description' }
+            = post.description
           = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
         %hr
     .col-md-4
