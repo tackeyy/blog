@@ -4,10 +4,16 @@
 .row
   .col-md-8
     - breadcrumb :post, @post
-    %section.postBox
-      %h1.title #{@post.title}
-      .body
-        = @post.to_html
+    %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
+    %h1{ itemscope: 'headline' }
+      = @post.title
+    %span{ itemscope: 'datepublished' }
+      = @post.created_at.to_s(:date)
+    %span{ itemscope: 'keywords' }
+      = @post.link_to_tag_lists
+    %hr
+    .body{ itemscope: 'articleBody' }
+      = @post.to_html
     .socials
       = render 'sns_btns', post: @post
     .comments
