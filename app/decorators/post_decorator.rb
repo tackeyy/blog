@@ -21,4 +21,10 @@ class PostDecorator < Draper::Decorator
 
     markdown.render(model.body).html_safe
   end
+
+  def link_to_tag_lists
+    model.tag_list.map do |tag|
+      h.link_to("##{tag}", h.blog_tag_path(tag))
+    end.join("&nbsp;").html_safe
+  end
 end

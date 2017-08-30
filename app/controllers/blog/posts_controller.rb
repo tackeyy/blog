@@ -15,7 +15,7 @@ class Blog::PostsController < ApplicationController
   private
 
   def set_posts
-    @posts = Post.shipped.order(created_at: :desc).page(params[:page]).decorate
+    @posts = Post.shipped.includes(:taggings).order(created_at: :desc).page(params[:page]).decorate
   end
 
   def set_post
