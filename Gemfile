@@ -46,7 +46,7 @@ gem 'bootsnap', require: false
 # ============================
 # Routing
 # ============================
-gem 'friendly_id', '~> 5.2.1'
+gem 'friendly_id', '~> 5.2.3'
 
 # ============================
 # Model
