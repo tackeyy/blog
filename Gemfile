@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.4'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
@@ -46,7 +46,7 @@ gem 'bootsnap', require: false
 # ============================
 # Routing
 # ============================
-gem 'friendly_id', '~> 5.2.1'
+gem 'friendly_id', '~> 5.2.3'
 
 # ============================
 # Model
