@@ -67,7 +67,7 @@ gem 'bootswatch-rails'
 gem 'font-awesome-rails'
 
 # Decorator
-gem 'draper', '3.0.0'
+gem 'draper', '3.0.1'
 
 # Active Admin
 gem 'active_material', github: 'vigetlabs/active_material'
