@@ -35,9 +35,9 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: a9a6a67fe34768ca7390eb93aa6a7574a746ce25
+  revision: eab54b3a3c42fc1a8b158dd28c4af25cb5491935
   specs:
-    webpacker (3.0.1)
+    webpacker (3.0.2)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -202,7 +202,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     erb2haml (0.1.5)
       html2haml
-    erubi (1.6.1)
+    erubi (1.7.0)
     erubis (2.7.0)
     escape_utils (1.2.1)
     eventmachine (1.2.5)
@@ -289,7 +289,8 @@ GEM
     html_truncator (0.4.1)
       nokogiri (~> 1.5)
     http_parser.rb (0.6.0)
-    i18n (0.8.6)
+    i18n (0.9.0)
+      concurrent-ruby (~> 1.0)
     iniparse (1.4.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
