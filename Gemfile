@@ -202,9 +202,6 @@ group :development do
 
   # Live load browser
   gem 'guard-livereload', require: false
-
-  # Manage multi process
-  gem 'foreman'
 end
 
 group :development, :test do

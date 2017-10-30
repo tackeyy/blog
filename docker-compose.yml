@@ -9,10 +9,11 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: foreman start
     volumes:
       - .:/blog
     ports:
-      - "3000:3000"
+      - "5000:5000"
+      - "8080:8080"
     depends_on:
       - db
