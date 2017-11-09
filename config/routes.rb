@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources 'feed', only: %i(index)
 
+  get :about, to: 'about#index'
+
   concern :paginatable do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end

@@ -6,6 +6,12 @@
     = stylesheet_link_tag('application', media: 'all')
     = javascript_include_tag('application', async: Rails.env.production?)
     = analytics_init if GoogleAnalytics.valid_tracker?
+    %script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+    :javascript
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4798983017500286",
+        enable_page_level_ads: true
+      });
   %body
     = render 'layouts/nav'
     = render 'layouts/header'
