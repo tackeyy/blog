@@ -3,9 +3,6 @@ machine:
     Asia/Tokyo
   ruby:
     version: 2.4.1
-test:
-  override:
-    - 'true'
 deployment:
   production:
     branch: master
