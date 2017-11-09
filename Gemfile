@@ -230,7 +230,7 @@ group :development, :test do
   gem 'rspec-rails'
 
   # test fixture
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 
   # Handle events on file modifications
   gem 'guard-rspec',      require: false
