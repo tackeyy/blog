@@ -227,7 +227,7 @@ group :development, :test do
   gem 'annotate'
 
   # Rspec
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
 
   # test fixture
   gem 'factory_bot_rails'

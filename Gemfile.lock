@@ -640,7 +640,7 @@ DEPENDENCIES
   rails-flog
   redcarpet
   responders
-  rspec-rails
+  rspec-rails (~> 3.6)
   rubocop
   ruby_css_lint
   sass-rails (~> 5.0)
