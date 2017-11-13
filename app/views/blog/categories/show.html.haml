@@ -1,24 +1,24 @@
 - set_meta_tags title: "Category: #{@category_name}"
 - set_meta_tags description: "Category: #{@category_name}に関してやってみたこと、知識共有、雑談についての記事の一覧です。"
 
-.container
-  .row
-    .col-md-12
-      - breadcrumb :category, @category_name
-    .col-md-8
-      - @posts.each do |post|
-        %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
-          %h1{ itemscope: 'headline' }
-            = post.title
-          %span{ itemscope: 'datepublished' }
-            = post.created_at.to_s(:date)
-          %span{ itemscope: 'keywords' }
-            = post.link_to_tag_lists
-          %p.description{ itemscope: 'description' }
-            = post.description
-          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
-        %hr
-    .col-md-4
-      = render 'shared/side_nav', categories: @categories, tags: @tags
-  .center
-    = paginate @posts
+.row
+  .col-md-12
+    - breadcrumb :category, @category_name
+  .col-md-8
+    - @posts.each do |post|
+      %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
+        %h1{ itemscope: 'headline' }
+          = post.title
+        %span{ itemscope: 'datepublished' }
+          = post.created_at.to_s(:date)
+        %span{ itemscope: 'keywords' }
+          = post.link_to_tag_lists
+        %p.description{ itemscope: 'description' }
+          = post.description
+        = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mt-5)
+      %hr
+  .col-md-4
+    = render 'shared/ads/adsence_rectangle'
+    = render 'shared/side_nav', categories: @categories, tags: @tags
+.center
+  = paginate @posts

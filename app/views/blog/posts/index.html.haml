@@ -1,25 +1,27 @@
 - if params[:page].present?
-  - set_meta_tags title: "Blog #{params[:page]}ページ目"
-  - set_meta_tags description: "#{params[:page]}ページ目 | Web周りの話や読んだ本についての感想を書いているブログです。"
+  :ruby
+    set_meta_tags title: "Blog #{params[:page]}ページ目"
+    set_meta_tags description: "#{params[:page]}ページ目 | Web周りの話や読んだ本についての感想を書いているブログです。"
 - else
-  - set_meta_tags title: 'Blog'
-  - set_meta_tags description: 'Web周りの話や読んだ本についての感想を書いているブログです。'
+  :ruby
+    set_meta_tags title: 'Blog'
+    set_meta_tags description: 'Web周りの話や読んだ本についての感想を書いているブログです。'
 
-.container
-  .row
-    .col-md-8
-      - @posts.each do |post|
-        %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
-          %h1{ itemscope: 'headline' }
-            = post.title
-          %span{ itemscope: 'datepublished' }
-            = post.created_at.to_s(:date)
-          %span{ itemscope: 'keywords' }
-            = post.link_to_tag_lists
-          %p.description{ itemscope: 'description' }
-            = post.description
-          = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mb-3)
-    .col-md-4
-      = render 'shared/side_nav', categories: @categories, tags: @tags
-  .center
-    = paginate @posts
+.row
+  .col-md-8
+    - @posts.each do |post|
+      %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
+        %h1{ itemscope: 'headline' }
+          = post.title
+        %span{ itemscope: 'datepublished' }
+          = post.created_at.to_s(:date)
+        %span{ itemscope: 'keywords' }
+          = post.link_to_tag_lists
+        %p.description{ itemscope: 'description' }
+          = post.description
+        = link_to 'Read more', blog_friendly_path(post), class: %w(btn btn-success mb-3)
+  .col-md-4
+    = render 'shared/ads/adsence_rectangle'
+    = render 'shared/side_nav', categories: @categories, tags: @tags
+.center
+  = paginate @posts
