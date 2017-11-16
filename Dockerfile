@@ -6,7 +6,8 @@ ENV LANG C.UTF-8
 ENV ROOT_PATH /blog
 
 # Install essential libraries
-RUN apt-get update && apt-get install -y build-essential libpq-dev
+RUN apt-get update && apt-get install -y build-essential libpq-dev apt-utils && \
+    apt-get install -y nginx
 
 # Install node.js
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
@@ -18,8 +19,10 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && apt-get install -y yarn
 
-# Fix: 'Cannot find module 'node-sass'
-RUN yarn add node-sass
+# Nginx
+ADD nginx.conf /etc/nginx/sites-available/blog.conf
+RUN rm -f /etc/nginx/sites-enabled/default && \
+    ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/app.conf
 
 # Move to root
 RUN mkdir $ROOT_PATH
