@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 5fce9ec3ceb57ba4eb85c3c3708231c1d572b235
+  revision: b1901e8ba6c9a024018a1803c26375b9cb971add
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -180,7 +180,7 @@ GEM
       dry-validation (~> 0.10.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    crass (1.0.2)
+    crass (1.0.3)
     database_rewinder (0.8.2)
     debug_inspector (0.0.3)
     deep_merge (1.1.1)
@@ -412,7 +412,7 @@ GEM
     rack (2.0.3)
     rack-proxy (0.6.2)
       rack
-    rack-test (0.7.0)
+    rack-test (0.7.1)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -447,7 +447,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.2)
       rake
-    rake (12.2.1)
+    rake (12.3.0)
     ransack (1.8.4)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
