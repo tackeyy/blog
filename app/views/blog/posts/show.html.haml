@@ -5,19 +5,19 @@
   .col-md-8
     - breadcrumb :post, @post
     %section.postBox{ itemscope: true, itemtype: 'http://schema.org/BlogPosting' }
-    %h1{ itemscope: 'headline' }
-      = @post.title
-    %span{ itemscope: 'datepublished' }
-      = @post.created_at.to_s(:date)
-    %span{ itemscope: 'keywords' }
-      = @post.link_to_tag_lists
-    %hr
-    .body{ itemscope: 'articleBody' }
-      = @post.to_html
-    .socials
-      = render 'sns_btns', post: @post
-    .comments
-      = render 'disqus', post: @post
+      %h1{ itemscope: 'headline' }
+        = @post.title
+      %span{ itemscope: 'datepublished' }
+        = @post.created_at.to_s(:date)
+      %span{ itemscope: 'keywords' }
+        = @post.link_to_tag_lists
+      %hr
+      .postBody{ itemscope: 'articleBody' }
+        = @post.to_html
+      .socials
+        = render 'sns_btns', post: @post
+      .comments
+        = render 'disqus', post: @post
   .col-md-4
     = render 'shared/ads/adsence_rectangle'
     = render 'shared/side_nav', categories: @categories, tags: @tags
