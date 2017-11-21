@@ -371,7 +371,7 @@ GEM
     minitest (5.10.3)
     msgpack (1.1.0)
     multi_json (1.12.1)
-    mysql2 (0.4.9)
+    mysql2 (0.4.10)
     nagareboshi (0.0.3)
     nenv (0.3.0)
     net-scp (1.2.1)
