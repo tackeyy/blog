@@ -30,7 +30,7 @@ class Post < ApplicationRecord
   end
 
   def self.all_archive_list
-    self.archive_list(posts: all)
+    archive_list(posts: all)
   end
 
   def self.archive_list(posts:)
