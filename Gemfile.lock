@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/activeadmin.git
-  revision: 48d0156e41de366ddde8559e016405dd5cfcccb7
+  revision: a8534b695340d27c8d67dc4119598c3968388a02
   specs:
     activeadmin (2.0.0.alpha)
       arbre (>= 1.1.1)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/activeadmin/inherited_resources.git
-  revision: 5d18499877852437f2c058747f07bc80e46557fc
+  revision: 46493ce10fc7d9f0bcd753f5d298c67ca83cf9b0
   specs:
     inherited_resources (1.7.2)
       actionpack (>= 4.2, < 5.2)
@@ -409,7 +409,7 @@ GEM
     rack (2.0.3)
     rack-proxy (0.6.2)
       rack
-    rack-test (0.8.0)
+    rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
