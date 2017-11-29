@@ -1,3 +1,6 @@
+= javascript_pack_tag 'TableOfContent'
+= stylesheet_pack_tag 'TableOfContent'
+
 - set_meta_tags title: "#{@post.title}"
 - set_meta_tags description: @post.description
 
@@ -12,6 +15,7 @@
       %span{ itemscope: 'keywords' }
         = @post.link_to_tag_lists
       %hr
+      %TableOfContent{ id: 'table-of-content', data: { html: @post.to_html } }
       .postBody{ itemscope: 'articleBody' }
         = @post.to_html
       .socials
