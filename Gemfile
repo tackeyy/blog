@@ -92,7 +92,7 @@ gem 'redcarpet'
 # Tagging
 gem 'select2-rails'
 
-gem 'html_truncator', '~>0.2'
+gem 'html_truncator', '~>0.4'
 
 # Breadcrumbs
 gem 'gretel'
