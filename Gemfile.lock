@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: ae8c948c2b68b7e916cccfff513508f4477810f7
+  revision: b25c5a993857e2c4bd70ff012e6f852993c2e825
   specs:
     webpacker (3.0.2)
       activesupport (>= 4.2)
@@ -407,7 +407,7 @@ GEM
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
-    rack-proxy (0.6.2)
+    rack-proxy (0.6.3)
       rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
