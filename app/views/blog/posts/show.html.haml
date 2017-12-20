@@ -12,6 +12,9 @@
       %span{ itemscope: 'keywords' }
         = @post.link_to_tag_lists
       %hr
+      - if admin_user_signed_in?
+        %div
+          = link_to '編集', edit_admin_post_path(@post.id), class: %w(btn btn-success mb-3), target: '_blank'
       .postBody{ itemscope: 'articleBody' }
         = @post.to_html
       .socials
