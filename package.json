@@ -35,6 +35,6 @@
   "devDependencies": {
     "eslint": "^4.6.1",
     "eslint-config-google": "^0.9.1",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^2.10.0"
   }
 }
