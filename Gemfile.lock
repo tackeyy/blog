@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: cc8c7c395ec6df56973d765451287c704686d9db
+  revision: f74f531a42b6c56e3edfe27358e5a4bd312b689b
   specs:
     webpacker (3.2.0)
       activesupport (>= 4.2)
@@ -366,7 +366,7 @@ GEM
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     msgpack (1.2.0)
     multi_json (1.12.2)
     mysql2 (0.4.10)
