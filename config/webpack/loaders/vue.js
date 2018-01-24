@@ -1,12 +1,13 @@
-const { env, settings } = require('../configuration.js')
+const { dev_server: devServer } = require('@rails/webpacker').config
 
-const isProduction = env.NODE_ENV === 'production'
-const extractCSS = !(settings.dev_server && settings.dev_server.hmr)
+const isProduction = process.env.NODE_ENV === 'production'
+const inDevServer = process.argv.find(v => v.includes('webpack-dev-server'))
+const extractCSS = !(inDevServer && (devServer && devServer.hmr)) || isProduction
 
 module.exports = {
-  test: /\.vue$/,
-  loader: 'vue-loader',
-  options: {
-    extractCSS: isProduction || extractCSS
-  }
+  test: /\.vue(\.erb)?$/,
+  use: [{
+    loader: 'vue-loader',
+    options: { extractCSS }
+  }]
 }
