@@ -252,7 +252,7 @@ GEM
       temple (>= 0.7.0)
       tilt
     ffi (1.9.18)
-    font-awesome-rails (4.7.0.2)
+    font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     formtastic (3.1.5)
