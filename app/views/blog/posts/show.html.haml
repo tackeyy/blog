@@ -19,6 +19,8 @@
         = @post.to_html
       .socials
         = render 'sns_btns', post: @post
+      .ads
+        = render 'shared/ads/adsence_rectangle'
       .comments
         = render 'disqus', post: @post
   .col-md-4
