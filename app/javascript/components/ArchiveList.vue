@@ -42,21 +42,25 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.archive-list-ul
-  list-style-type: none
-  line-height: 1.5em
+<style scoped>
+.archive-list-ul {
+  list-style-type: none;
+  line-height: 1.5em;
+}
 
-.archive-close::before
-  margin-right: 2%
-  font-family: 'FontAwesome'
-  content: '\f0da' // fa-caret-right
+.archive-close::before {
+  margin-right: 2%;
+  font-family: 'FontAwesome';
+  content: '\f0da'// fa-caret-right;
+}
 
-.archive-open::before
-  margin-right: 2%
-  font-family: 'FontAwesome'
-  content: '\f0d7' // fa-caret-down
+.archive-open::before {
+  margin-right: 2%;
+  font-family: 'FontAwesome';
+  content: '\f0d7' // fa-caret-down;
+}
 
-.archive-list-li
-  list-style-type: circle
+.archive-list-li {
+  list-style-type: circle;
+}
 </style>
