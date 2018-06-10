@@ -5,6 +5,10 @@ PostCheckout:
     enabled: true
 
 PreCommit:
+  # Dependency Check
+  AuthorName:
+    enabled: false
+
   # Checks for vulnerable versions of gems
   BundleAudit:
     enabled: true
