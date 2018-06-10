@@ -161,6 +161,7 @@ group :deployment do
   gem 'capistrano-rails-console'
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
+  gem 'capistrano-yarn'
 end
 
 group :development do
