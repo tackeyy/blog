@@ -18,7 +18,7 @@
         %div
           = link_to '編集', edit_admin_post_path(@post.id), class: %w(btn btn-success mb-3), target: '_blank'
       .postBody{ itemscope: 'articleBody' }
-        %p こんにちは。Kajitz inc.の<a href="https://twitter.com/3chhe" onclick="ga('send', 'event', 'コンバージョン', 'twitter_link_center', 'this.ref')" target="_blank">瀧田</a>です。
+        %p こんにちは。<a href="https://twitter.com/3chhe" onclick="ga('send', 'event', 'コンバージョン', 'twitter_link_center', 'this.ref')" target="_blank">Takita</a>です。
         = @post.to_html
       .socials
         = render 'sns_btns', post: @post
